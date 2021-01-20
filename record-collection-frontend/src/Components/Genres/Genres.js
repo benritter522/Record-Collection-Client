@@ -1,15 +1,32 @@
 import { useState, useEffect } from 'react'
+import { Link } from 'react-router-dom'
 
 const Genres = () => {
     const [genres, setGenres] = useState([]);
 
     const fetchGenres = async () => {
         try {
-            const response = await fetch ("http://localhost:3000/genres");
+            const response = await fetch ('https://record-collection-api.herokuapp.com/genres');
             const data = await response.json();
             setGenres(data);
         } catch(err) {
             console.error(err)
+        }
+    }
+
+    const deleteGenre = async (id) => {
+        try {
+            const response = await fetch(`https://record-collection-api.herokuapp.com/genres/${id}`, {
+                method: 'DELETE',
+                headers: {
+                    'Content-type': 'application/json'
+                }
+            })
+            const data = await response.json();
+            const filteredGenres = genres.filter(genre => genres.id !== data.id);
+            setGenres(filteredGenres);
+        } catch(err) {
+            console.error(err);
         }
     }
 
@@ -24,9 +41,17 @@ const Genres = () => {
             genres.map((genre, index) => {
                 return(
                     <div
-                        key={index}
+                    key={index}
                     >
-                        {genre.name}
+                        <Link to={`/genres/${genre.id}`}>
+                            {genre.name}
+                        </Link>
+
+                        <button
+                        onClick={() => { deleteGenre(genre.id) }}
+                        >
+                        Delete
+                        </button>
                     </div>
                 )
             })
