@@ -1,6 +1,6 @@
 import { Link } from 'react'
 import { useState, useEffect } from 'react'
-
+// import '../App.css';
 import NewRecordForm from "./NewRecordForm"
 
 
