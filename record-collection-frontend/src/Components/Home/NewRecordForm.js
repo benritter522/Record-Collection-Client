@@ -7,16 +7,43 @@ const NewRecordForm = (props) => {
     const songsInput = useRef(null);
     const imgInput = useRef(null);
 
-    const createRecord = async (event, props) => {
+
+
+    const createModelInstance = (model) => {
+        try {
+            const response = await fetch(`https://record-collection-api.herokuapp.com/${model}`, {
+                method: 'POST',
+                headers: {
+                    'Content-type': 'application/json'
+                },
+                body: body
+            })
+            const data = await response;
+            console.log("body" , body)
+            console.log("data in new recordform" , data)
+            console.log("props.records", props.records)
+            props.updateRecords([...props.records, data])
+        } catch(err) {
+            console.error(err);
+        }
+    }
+
+    createModelInstance('albums');
+
+    const createRecord = async (event) => {
+
         event.preventDefault();
-        const genre = genreInput.current.value;
-        const artist = artistInput.current.value;
-        const album = albumInput.current.value;
-        const songs = songsInput.current.value;
-        const img = imgInput.current.value;
+        const genre = { name: genreInput.current.value };
+        const artist = { name: artistInput.current.value };
+        const album = { name: albumInput.current.value,
+                        image: imgInput.current.value
+        };
+        const song = songsInput.current.value;
+        // const img = imgInput.current.value;
 
         const body = JSON.stringify({
-            genre, artist, album, songs, img
+            genre, artist, album, song
+            // , img
         });
         
         event.currentTarget.reset();
@@ -29,8 +56,10 @@ const NewRecordForm = (props) => {
                 body: body
             })
             const data = await response;
-            console.log("response in new recordform",response)
-            props.updateRecords([...props.albums, data])
+            console.log("body" , body)
+            console.log("data in new recordform" , data)
+            console.log("props.records", props.records)
+            props.updateRecords([...props.records, data])
         } catch(err) {
             console.error(err);
         }
