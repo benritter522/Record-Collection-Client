@@ -7,7 +7,7 @@ const NewRecordForm = (props) => {
     const songsInput = useRef(null);
     const imgInput = useRef(null);
 
-    const createRecord = async (event) => {
+    const createRecord = async (event, props) => {
         event.preventDefault();
         const genre = genreInput.current.value;
         const artist = artistInput.current.value;
@@ -21,14 +21,15 @@ const NewRecordForm = (props) => {
         
         event.currentTarget.reset();
         try {
-            const response = await fetch('http://localhost:3000/collections', {
+            const response = await fetch('https://record-collection-api.herokuapp.com/collections', {
                 method: 'POST',
                 headers: {
                     'Content-type': 'application/json'
                 },
                 body: body
             })
-            const data = await response.json();
+            const data = await response;
+            console.log("response in new recordform",response)
             props.updateRecords([...props.albums, data])
         } catch(err) {
             console.error(err);

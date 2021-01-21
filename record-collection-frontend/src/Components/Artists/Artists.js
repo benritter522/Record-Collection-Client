@@ -32,7 +32,7 @@ const Artists = () => {
 
     useEffect(() => {
         fetchArtists();
-    }, [])
+    }, [artists])
 
     return(
         <div className="Artists">

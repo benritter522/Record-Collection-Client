@@ -32,7 +32,7 @@ const Genres = () => {
 
     useEffect(() => {
         fetchGenres();
-    }, [])
+    }, [genres])
 
     return(
         <div className="Genres">
