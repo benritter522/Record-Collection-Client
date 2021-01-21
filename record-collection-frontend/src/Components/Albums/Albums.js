@@ -22,7 +22,7 @@ const Albums = () => {
                     'Content-type': 'application/json'
                 }
             })
-            const data = await response.json();
+            const data = await response;
             const filteredAlbums = albums.filter(album => album.id !== data.id);
             setAlbums(filteredAlbums);
         } catch(err) {
@@ -32,7 +32,7 @@ const Albums = () => {
 
     useEffect(() => {
         fetchAlbums();
-    }, [])
+    }, [albums])
     
     return(
         <div className="Albums">

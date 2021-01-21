@@ -22,7 +22,7 @@ const Artists = () => {
                     'Content-type': 'application/json'
                 }
             })
-            const data = await response.json();
+            const data = await response;
             const filteredArtists = artists.filter(artist => artist.id !== data.id);
             setArtists(filteredArtists);
         } catch(err) {

@@ -22,7 +22,7 @@ const Genres = () => {
                     'Content-type': 'application/json'
                 }
             })
-            const data = await response.json();
+            const data = await response;
             const filteredGenres = genres.filter(genre => genres.id !== data.id);
             setGenres(filteredGenres);
         } catch(err) {
