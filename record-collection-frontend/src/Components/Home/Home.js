@@ -2,7 +2,7 @@ import { Link } from 'react-router-dom'
 import { useState, useEffect } from 'react'
 import '../../App.css';
 import '../../Pages/Home.css';
-import NewRecordForm from "./NewRecordForm"
+import NewRecordForm from "./NewRecordForm";
 
 const Home = () => {
     const [records, setRecords] = useState([]);
@@ -23,12 +23,19 @@ const Home = () => {
 
     return(
         <div className="homepage">
-            <h1>The Record Collection</h1>
+            <h1 className="title">The Record Collection</h1>
             <NewRecordForm records={records} updateRecords={setRecords} />
-            <Link to="/genres">Genres</Link><br/>
-            <Link to="/artists">Artists</Link><br/>
-            <Link to="/albums">Albums</Link><br/>
-
+            <div className="homelinks">
+                <div className="genresrecord">
+                <Link to="/genres">Genres</Link>
+                </div>
+                <div className="artistsrecord">
+                <Link to="/artists">Artists</Link>
+                </div>
+                <div className="albumsrecord">
+                <Link to="/albums">Albums</Link>
+                </div>
+            </div>
         </div>
     )
 }
