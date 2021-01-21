@@ -1,6 +1,7 @@
 import { Link } from 'react-router-dom'
 import { useState, useEffect } from 'react'
-// import '../App.css';
+import '../../App.css';
+import '../../Pages/Home.css';
 import NewRecordForm from "./NewRecordForm"
 
 const Home = () => {
@@ -21,14 +22,12 @@ const Home = () => {
     }, [])
 
     return(
-        <div>
+        <div className="homepage">
             <h1>The Record Collection</h1>
             <NewRecordForm records={records} updateRecords={setRecords} />
-
-            {/* <Link to="/genres">Genres</Link>
-            <Link to="/artists">Artists</Link>
-            <Link to="/albums">Albums</Link> */}
-
+            <Link to="/genres">Genres</Link><br/>
+            <Link to="/artists">Artists</Link><br/>
+            <Link to="/albums">Albums</Link><br/>
 
         </div>
     )
