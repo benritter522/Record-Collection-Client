@@ -1,5 +1,6 @@
 import React, {useState, useEffect} from 'react'
-import Album from './Albums'
+import Album from './Albums';
+import '../../Pages/Show.css';
 
 const SingleAlbum = (props) => {
     const [singleAlbum, setSingleAlbum] = useState ({});
@@ -22,7 +23,7 @@ const SingleAlbum = (props) => {
     console.log(singleAlbum)
 
     return(
-        <div>
+        <div className="Show">
 
             <h1>Albums</h1>
 

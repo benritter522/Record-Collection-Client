@@ -1,4 +1,5 @@
 import React, {useState, useEffect} from 'react'
+import '../../Pages/Show.css';
 
 
 const SingleGenre = (props) => {
@@ -19,7 +20,7 @@ const SingleGenre = (props) => {
     console.log(singleGenre);
 
     return(
-        <div>
+        <div className="Show">
         
              <h1>{singleGenre.name}</h1>
             { singleGenre.artists

@@ -1,5 +1,6 @@
 import './App.css';
-import { Route, Link, Switch } from 'react-router-dom'
+import { Route, Link, Switch } from 'react-router-dom';
+import Nav from 'react-bootstrap/Nav';
 
 import Home from './Components/Home/Home'
 import Genres from './Components/Genres/Genres'
@@ -13,7 +14,9 @@ import SingleAlbum from './Components/Albums/SingleAlbum';
 function App() {
   return (
     <div className="App">
+      <Nav>
       <Link to="/">Home</Link><br/>
+      </Nav>
       <Switch>
         <Route exact path="/" component={Home} />
         <Route /*exact*/ path="/genres/:id" render={routerProps => {

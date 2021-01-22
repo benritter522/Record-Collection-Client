@@ -1,6 +1,6 @@
 import { useState, useEffect } from 'react'
-import Card from 'react-bootstrap/esm/Card';
 import { Link } from 'react-router-dom'
+import '../../Pages/Index.css';
 
 const Artists = () => {
     const [artists, setArtists] = useState([]);
@@ -36,30 +36,28 @@ const Artists = () => {
     }, [artists])
 
     return(
-        <div className="Artists">
+        <div className="Index">
             <h1>Artists</h1>
-        {
-            artists.map((artist, index) => {
-                return(
-                    <div
-                    key={index}
-                    >
-                    <Card>
-                        <Card.Body>
-                        <Link to={`/artists/${artist.id}`}>
-                            {artist.name}
-                        </Link>
-                        </Card.Body>
-                    </Card>
-                        <button
-                        onClick={() => { deleteArtist(artist.id) }}
-                        >
-                        Delete
-                        </button>
-                    </div>
-                )
-            })
-        }
+                <div className="indexlist">
+                    {
+                        artists.map((artist, index) => {
+                            return(
+                                <div className="oneindex"
+                                key={index}
+                                >
+                                    <Link to={`/artists/${artist.id}`}>
+                                        <h1 className="test">{artist.name}</h1>
+                                    </Link>
+                                    <button
+                                    onClick={() => { deleteArtist(artist.id) }}
+                                    >
+                                    Delete
+                                    </button>
+                                </div>
+                            )
+                        })
+                    }
+                </div>
         </div>
     )
 }
