@@ -20,6 +20,7 @@ const SingleGenre = (props) => {
 
     return(
         <div>
+        
              <h1>{singleGenre.name}</h1>
             { singleGenre.artists
                 ? singleGenre.artists.map((artist) => {
@@ -45,6 +46,7 @@ const SingleGenre = (props) => {
                 })
                 : <h1>Loading...</h1>
             }
+            
         </div>
     )
 }
