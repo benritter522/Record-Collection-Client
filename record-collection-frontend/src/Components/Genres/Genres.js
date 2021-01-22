@@ -37,7 +37,7 @@ const Genres = () => {
 
     return(
         <div className="Index">
-            <h1>Genres</h1>
+            <h1 className="indextitle">Genres</h1>
                 <div className="indexlist">
                     {
                         genres.map((genre, index) => {

@@ -26,7 +26,7 @@ const SingleGenre = (props) => {
             { singleGenre.artists
                 ? singleGenre.artists.map((artist) => {
                     return (
-                        <p>{artist.name}</p>
+                        <p>Artist: {artist.name}</p>
                     )
                 })
                 : <h1>Loading...</h1>
@@ -34,7 +34,7 @@ const SingleGenre = (props) => {
             { singleGenre.albums
                 ? singleGenre.albums.map((album) => {
                     return (
-                        <p>{album.name}</p>
+                        <p>Album: {album.name}</p>
                     )
                 })
                 : <h1>Loading...</h1>
@@ -42,7 +42,7 @@ const SingleGenre = (props) => {
             { singleGenre.songs
                 ? singleGenre.songs.map((song) => {
                     return (
-                        <p>{song.name}</p>
+                        <p>Songs: {song.name}</p>
                     )
                 })
                 : <h1>Loading...</h1>
