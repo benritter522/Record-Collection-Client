@@ -1,5 +1,6 @@
 import { useState, useEffect } from 'react'
-import { Link } from 'react-router-dom'
+import { Link } from 'react-router-dom';
+import '../../Pages/Index.css';
 
 const Albums = () => {
     const [albums, setAlbums] = useState([]);
@@ -35,27 +36,29 @@ const Albums = () => {
     }, [albums])
     
     return(
-        <div className="Albums">
+        <div className="Index">
             <h1>Albums</h1>
-        {
-            albums.map((album, index) => {
-                return(
-                    <div
-                    key={index}
-                    >
-                        <Link to={`/albums/${album.id}`}>
-                            {album.name}
-                        </Link>
-                        
-                        <button
-                        onClick={() => { deleteAlbum(album.id) }}
-                        >
-                        Delete
-                        </button>
-                    </div>
-                )
-            })
-        }
+                <div className="indexlist">
+                    {
+                        albums.map((album, index) => {
+                            return(
+                                <div className="oneindex"
+                                key={index}
+                                >
+                                    <Link to={`/albums/${album.id}`}>
+                                        <h1 className="test">{album.name}</h1>
+                                    </Link>
+                                    
+                                    <button
+                                    onClick={() => { deleteAlbum(album.id) }}
+                                    >
+                                    Delete
+                                    </button>
+                                </div>
+                            )
+                        })
+                    }
+                </div>
         </div>
     )
 }

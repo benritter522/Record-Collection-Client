@@ -1,4 +1,5 @@
-import React, {useState, useEffect} from 'react'
+import React, {useState, useEffect} from 'react';
+import '../../Pages/Show.css';
 
 const SingleArtist = (props) => {
     const [singleArtist, setSingleArtist] = useState ({});
@@ -26,12 +27,12 @@ const SingleArtist = (props) => {
     //     itemsToRender = "Loading..."
     // }
     return(
-        <div>
+        <div className="Show">
             <h1>{singleArtist.name}</h1>
             { singleArtist.genres
                 ? singleArtist.genres.map((genre) => {
                     return (
-                        <p>{genre.name}</p>
+                        <p>Genre: {genre.name}</p>
                     )
                 })
                 : <h1>Loading...</h1>
@@ -39,7 +40,7 @@ const SingleArtist = (props) => {
             { singleArtist.songs
                 ? singleArtist.songs.map((song) => {
                     return (
-                        <p>{song.name}</p>
+                        <p>Songs: {song.name}</p>
                     )
                 })
                 : <h1>Loading...</h1>
@@ -47,7 +48,7 @@ const SingleArtist = (props) => {
             { singleArtist.albums
                 ? singleArtist.albums.map((album) => {
                     return (
-                        <p>{album.name}</p>
+                        <p>Albums: {album.name}</p>
                     )
                 })
                 : <h1>Loading...</h1>

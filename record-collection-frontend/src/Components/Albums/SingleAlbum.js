@@ -1,5 +1,6 @@
-import React, {useState, useEffect, useRef} from 'react'
-import Album from './Albums'
+import React, {useState, useEffect} from 'react'
+import Album from './Albums';
+import '../../Pages/Show.css';
 import EditSingleAlbum from './EditSingleAlbum'
 
 const SingleAlbum = (props) => {
@@ -25,7 +26,7 @@ const SingleAlbum = (props) => {
     
 
     return(
-        <div>
+        <div className="Show">
 
             <h1>Albums</h1>
 

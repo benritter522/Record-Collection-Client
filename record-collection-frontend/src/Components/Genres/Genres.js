@@ -1,5 +1,6 @@
 import { useState, useEffect } from 'react'
 import { Link } from 'react-router-dom'
+import '../../Pages/Index.css';
 
 const Genres = () => {
     const [genres, setGenres] = useState([]);
@@ -35,27 +36,29 @@ const Genres = () => {
     }, [genres])
 
     return(
-        <div className="Genres">
+        <div className="Index">
             <h1>Genres</h1>
-        {
-            genres.map((genre, index) => {
-                return(
-                    <div
-                    key={index}
-                    >
-                        <Link to={`/genres/${genre.id}`}>
-                            {genre.name}
-                        </Link>
+                <div className="indexlist">
+                    {
+                        genres.map((genre, index) => {
+                            return(
+                                <div className="oneindex"
+                                key={index}
+                                >
+                                        <Link to={`/genres/${genre.id}`}>
+                                            <h1 className="test">{genre.name}</h1>
+                                        </Link>
 
-                        <button
-                        onClick={() => { deleteGenre(genre.id) }}
-                        >
-                        Delete
-                        </button>
-                    </div>
-                )
-            })
-        }
+                                        <button
+                                        onClick={() => { deleteGenre(genre.id) }}
+                                        >
+                                        Delete
+                                        </button>
+                                </div>
+                            )
+                        })
+                    }
+                </div>
         </div>
     )
 }

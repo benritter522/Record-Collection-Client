@@ -3,8 +3,8 @@
     /* height: 100vh; */
     background: url(https://res.cloudinary.com/dzgeqcksj/image/upload/v1611177804/RecordCollection/cpr26503_rytrxc.jpg);
     background-size: cover;
-    width: 100%;
-    height: 100%;
+    height: 100vh;
+
   }
 
   .homelinks {
