@@ -62,7 +62,7 @@ const SingleAlbum = (props) => {
                 : <h1>"Loading..."</h1>
             }
             
-            <EditSingleAlbum singleAlbum={singleAlbum} setSingleAlbum={singleAlbum}/>
+            <EditSingleAlbum singleAlbum={singleAlbum} setSingleAlbum={setSingleAlbum}/>
 
         </div>
     )
