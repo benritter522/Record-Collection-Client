@@ -3,7 +3,10 @@
     /* background-size: auto; */
     background-repeat: repeat-y;
     height: 100%;
-    font-family: 'Pacifico', cursive;
+  }
+
+  .indextitle {
+      font-size: 78px;
   }
 
   .indexlist {
@@ -23,7 +26,7 @@
     padding: 20px 40px;
     background: rgb(43, 43, 43);
     text-align: center;
-    font-family: "Helvetica Neue", sans-serif;
+    font-family: 'Creepster', cursive;
 }
 
   .test {

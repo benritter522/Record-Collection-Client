@@ -27,22 +27,14 @@ const SingleAlbum = (props) => {
 
     return(
         <div className="Show">
-
-            <h1>Albums</h1>
-
-
             {singleAlbum
                 ? (
-                    <div>
-                        <h1>{singleAlbum.name}</h1>
-                        
-                        <h1>{singleAlbum.name}</h1>
-
-
+                    <div className="test">
+                        <h1 className="showtitle">{singleAlbum.name}</h1>
                         { singleAlbum.artists
                             ? singleAlbum.artists.map((artist, index) => {
                                 return (
-                                    <p key={index}>{artist.name}</p>
+                                    <p key={index}>Artist: {artist.name}</p>
                                 )
                             })
                             : <h1>Loading...</h1>
@@ -51,7 +43,7 @@ const SingleAlbum = (props) => {
                         { singleAlbum.genres
                             ? singleAlbum.genres.map((genre, index) => {
                                 return (
-                                    <p key={index}>{genre.name}</p>
+                                    <p key={index}>Genre: {genre.name}</p>
                                 )
                             })
                             : <h1>Loading...</h1>
@@ -60,7 +52,7 @@ const SingleAlbum = (props) => {
                         { singleAlbum.songs
                             ? singleAlbum.songs.map((song, index) => {
                                 return (
-                                    <p key={index}>{song.name}</p>
+                                    <p key={index}> Songs: {song.name}</p>
                                 )
                             })
                             : <h1>Loading...</h1>

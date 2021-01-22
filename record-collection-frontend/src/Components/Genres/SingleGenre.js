@@ -22,31 +22,33 @@ const SingleGenre = (props) => {
     return(
         <div className="Show">
         
-             <h1>{singleGenre.name}</h1>
-            { singleGenre.artists
-                ? singleGenre.artists.map((artist) => {
-                    return (
-                        <p>{artist.name}</p>
-                    )
-                })
-                : <h1>Loading...</h1>
-            }
-            { singleGenre.albums
-                ? singleGenre.albums.map((album) => {
-                    return (
-                        <p>{album.name}</p>
-                    )
-                })
-                : <h1>Loading...</h1>
-            }
-            { singleGenre.songs
-                ? singleGenre.songs.map((song) => {
-                    return (
-                        <p>{song.name}</p>
-                    )
-                })
-                : <h1>Loading...</h1>
-            }
+             <h1 className="showtitle">{singleGenre.name}</h1>
+             <div className="showlist">
+                    { singleGenre.artists
+                        ? singleGenre.artists.map((artist) => {
+                            return (
+                                <div className="oneshow">Artist: {artist.name}</div>
+                            )
+                        })
+                        : <h1>Loading...</h1>
+                    }
+                    { singleGenre.albums
+                        ? singleGenre.albums.map((album) => {
+                            return (
+                                <div className="oneshow">Album: {album.name}</div>
+                            )
+                        })
+                        : <h1>Loading...</h1>
+                    }
+                    { singleGenre.songs
+                        ? singleGenre.songs.map((song) => {
+                            return (
+                                <div className="oneshow">Songs: {song.name}</div>
+                            )
+                        })
+                        : <h1>Loading...</h1>
+                    }
+            </div>
             
         </div>
     )

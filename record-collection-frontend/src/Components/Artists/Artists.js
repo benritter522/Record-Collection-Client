@@ -1,6 +1,7 @@
 import { useState, useEffect } from 'react'
 import { Link } from 'react-router-dom'
 import '../../Pages/Index.css';
+import Button from 'react-bootstrap/Button';
 
 const Artists = () => {
     const [artists, setArtists] = useState([]);
@@ -37,7 +38,7 @@ const Artists = () => {
 
     return(
         <div className="Index">
-            <h1>Artists</h1>
+            <h1 className="indextitle">Artists</h1>
                 <div className="indexlist">
                     {
                         artists.map((artist, index) => {
@@ -48,11 +49,11 @@ const Artists = () => {
                                     <Link to={`/artists/${artist.id}`}>
                                         <h1 className="test">{artist.name}</h1>
                                     </Link>
-                                    <button
+                                    <Button variant="dark" size="sm"
                                     onClick={() => { deleteArtist(artist.id) }}
                                     >
                                     Delete
-                                    </button>
+                                    </Button>
                                 </div>
                             )
                         })
