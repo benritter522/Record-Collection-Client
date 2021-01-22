@@ -11,7 +11,6 @@ const NewRecordForm = (props) => {
     const [albumID, setAlbumID] = useState(0);
     const [songsID, setSongsID] = useState(0);
 
-
     const genreInput = useRef(null);
     const artistInput = useRef(null);
     const albumInput = useRef(null);
@@ -47,10 +46,6 @@ const NewRecordForm = (props) => {
         }
     }
 
-    arrModels.forEach(model => {
-        fetchModels(model.name, model.func);
-    });
-
     const createGenre = async () => {
         const genre = { name: genreInput.current.value };
         const body = JSON.stringify({ genre });
@@ -65,8 +60,7 @@ const NewRecordForm = (props) => {
             const data = await response.json();
             setGenres([...genres, data]);
             setGenreID(data.id);
-            console.log("new genre data", data);
-            console.log("new genre ID", data.id);
+
         } catch(err) {
             console.error(err);
         }
@@ -129,26 +123,53 @@ const NewRecordForm = (props) => {
         }
     }
 
-    const createRecord = (event) => {
+    const createRecord = async (event) => {
         event.preventDefault();
 
-        createGenre();
         createArtist();
+        createGenre();
         createAlbum();
         createSongs();
 
         event.currentTarget.reset();
 
-        // console.log("genres", genres);
-        // console.log("artists", artists);
-        // console.log("albums", albums);
-        // console.log("songs", songs);
+        // console.log("genre ID", genreID);
+        // console.log("artist ID", artistID);
+        // console.log("album ID", albumID);
+        // console.log("song ID", songsID);
 
+        // const body = JSON.stringify({ song });
+
+        const body = JSON.stringify({ 
+            genre_id: genreID, 
+            artist_id: artistID, 
+            album_id: albumID, 
+            song_id: songsID 
+        });
+
+        console.log("body", body)
+
+        try {
+            const response = await fetch('https://record-collection-api.herokuapp.com/collections', {
+                method: 'POST',
+                headers: {
+                    'Content-type': 'application/json'
+                },
+                body: body
+            })
+            const data = await response.json();
+            console.log(data)
+            props.updateRecords([...props.records, data])
+        } catch(err) {
+            console.error(err);
+        }
     }
 
-    // useEffect(() => {
-
-    // },[])
+    useEffect(() => {
+        arrModels.forEach(model => {
+            fetchModels(model.name, model.func);
+        });
+    },[])
     
     // const createRecord = async (event) => {
         
