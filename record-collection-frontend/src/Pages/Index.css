@@ -23,10 +23,10 @@
     position: relative;
     margin: 10% auto auto auto;
     width: 125px;
-    padding: 20px 40px;
+    padding: 15px 40px;
     background: rgb(43, 43, 43);
     text-align: center;
-    font-family: 'Creepster', cursive;
+    font-family: 'Teko', sans-serif;
 }
 
   .test {
