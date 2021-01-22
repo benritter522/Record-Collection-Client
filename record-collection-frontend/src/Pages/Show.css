@@ -6,7 +6,7 @@
 
 .showtitle {
     font-size: 78px;
-    color: black;
+    color: #AEEBEC;
 }
 
 .showlist {
@@ -26,7 +26,7 @@
     padding: 20px 40px;
     background: rgb(43, 43, 43);
     text-align: center;
-    font-family: 'Creepster', cursive;
+
 }
 
 .oneshow {
@@ -39,5 +39,5 @@
     padding: 20px 40px;
     background: rgb(43, 43, 43);
     text-align: center;
-    font-family: 'Creepster', cursive;
+
 }
