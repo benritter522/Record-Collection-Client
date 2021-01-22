@@ -1,4 +1,43 @@
 .Show {
     background: url(https://res.cloudinary.com/dzgeqcksj/image/upload/v1611177716/RecordCollection/Record-hp-GQ-7Jun17_istock_b_m5ovd7.jpg);
     height: 100vh;
+    background-repeat: repeat;
+}
+
+.showtitle {
+    font-size: 78px;
+    color: black;
+}
+
+.showlist {
+    display: flex;
+    justify-items: space-between;
+    align-content: center;
+    flex-wrap: wrap;
+}
+
+.oneshow {
+    border: 1px black solid;
+    color: white;
+    border-radius: 3px;
+    position: relative;
+    margin: 10% auto auto auto;
+    width: 125px;
+    padding: 20px 40px;
+    background: rgb(43, 43, 43);
+    text-align: center;
+    font-family: 'Creepster', cursive;
+}
+
+.oneshow {
+    border: 1px black solid;
+    color: white;
+    border-radius: 3px;
+    position: relative;
+    margin: 10% auto auto auto;
+    width: 125px;
+    padding: 20px 40px;
+    background: rgb(43, 43, 43);
+    text-align: center;
+    font-family: 'Creepster', cursive;
 }

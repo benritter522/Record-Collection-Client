@@ -1,6 +1,7 @@
 import './App.css';
 import { Route, Link, Switch } from 'react-router-dom';
 import Nav from 'react-bootstrap/Nav';
+import Navbar from 'react-bootstrap/Navbar';
 
 import Home from './Components/Home/Home'
 import Genres from './Components/Genres/Genres'
@@ -14,10 +15,14 @@ import SingleAlbum from './Components/Albums/SingleAlbum';
 function App() {
   return (
     <div className="App">
-      <Nav>
-      <Link to="/">Home</Link><br/>
-
-      </Nav>
+      <Navbar bg="dark" variant="dark">
+          <Nav className="savvynavy">
+            <Nav.Link href="/">Home</Nav.Link>
+            <Nav.Link href="/genres">Genres</Nav.Link>
+            <Nav.Link href="/artists">Artists</Nav.Link>
+            <Nav.Link href="/albums">Albums</Nav.Link>
+          </Nav>
+      </Navbar>
       <Switch>
         <Route exact path="/" component={Home} />
         <Route /*exact*/ path="/genres/:id" render={routerProps => {

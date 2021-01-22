@@ -3,6 +3,11 @@
   background-color: gray;
 }
 
+.savvynavy {
+  display: flex;
+  justify-content: space-around;
+}
+
 /* body {
   background: url(https://res.cloudinary.com/dzgeqcksj/image/upload/v1611177804/RecordCollection/cpr26503_rytrxc.jpg);
   background-size: cover;
@@ -16,7 +21,7 @@
 } */
 
 
-/* .App-header {
+/* .savvynavy {
   background-color: #282c34;
   min-height: 100vh;
   display: flex;
