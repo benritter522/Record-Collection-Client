@@ -1,4 +1,5 @@
 import { useState, useEffect } from 'react'
+import Card from 'react-bootstrap/esm/Card';
 import { Link } from 'react-router-dom'
 
 const Artists = () => {
@@ -43,10 +44,13 @@ const Artists = () => {
                     <div
                     key={index}
                     >
+                    <Card>
+                        <Card.Body>
                         <Link to={`/artists/${artist.id}`}>
                             {artist.name}
                         </Link>
-
+                        </Card.Body>
+                    </Card>
                         <button
                         onClick={() => { deleteArtist(artist.id) }}
                         >

@@ -1,0 +1,28 @@
+.Genres {
+    background: url(https://res.cloudinary.com/dzgeqcksj/image/upload/v1611177771/RecordCollection/second-hand-590789-e1523982087287_tw05u5.jpg);
+    background-size: auto;
+    height: 100%;
+    font-family: 'Pacifico', cursive;
+  }
+
+  .genrelist {
+    border: 1px black solid;
+    color: white;
+    border-radius: 3px;
+    position: relative;
+    margin: 1% auto auto auto;
+    width: 200px;
+    padding: 25px 20px;
+    background: rgb(43, 43, 43);
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    flex-wrap: row wrap;
+    text-align: left;
+    font-family: 'Pacifico', cursive;
+}
+
+  .test {
+      color: white;
+  }
+

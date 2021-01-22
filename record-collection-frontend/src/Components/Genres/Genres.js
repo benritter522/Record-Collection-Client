@@ -1,5 +1,7 @@
 import { useState, useEffect } from 'react'
 import { Link } from 'react-router-dom'
+import '../../Pages/Index.css';
+import Card from 'react-bootstrap/Card'
 
 const Genres = () => {
     const [genres, setGenres] = useState([]);
@@ -37,25 +39,29 @@ const Genres = () => {
     return(
         <div className="Genres">
             <h1>Genres</h1>
-        {
-            genres.map((genre, index) => {
-                return(
-                    <div
-                    key={index}
-                    >
-                        <Link to={`/genres/${genre.id}`}>
-                            {genre.name}
-                        </Link>
+            <Card>
+                <Card.Body>
+                    {
+                        genres.map((genre, index) => {
+                            return(
+                                <div className="genrelist"
+                                key={index}
+                                >
+                                        <Link to={`/genres/${genre.id}`}>
+                                            <li className="test">{genre.name}</li>
+                                        </Link>
 
-                        <button
-                        onClick={() => { deleteGenre(genre.id) }}
-                        >
-                        Delete
-                        </button>
-                    </div>
-                )
-            })
-        }
+                                        <button
+                                        onClick={() => { deleteGenre(genre.id) }}
+                                        >
+                                        Delete
+                                        </button>
+                                </div>
+                            )
+                        })
+                    }
+                </Card.Body>
+            </Card>
         </div>
     )
 }
