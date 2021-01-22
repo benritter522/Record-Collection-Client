@@ -11,7 +11,7 @@ const Home = () => {
         try {
             const response = await fetch ('https://record-collection-api.herokuapp.com/collections');
             const data = await response.json();
-            console.log("home page fetch", data);
+            // console.log("home page fetch", data);
             setRecords(data);
         } catch(err) {
             console.error(err)
@@ -22,7 +22,8 @@ const Home = () => {
         fetchRecords();
     }, [])
 
-    console.log("records:", records, setRecords)
+    // console.log("records:", records)
+    // console.log(setRecords)
     return(
         <div className="homepage">
             <h1 className="title">The Record Collection</h1>

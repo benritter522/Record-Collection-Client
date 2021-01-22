@@ -16,6 +16,7 @@ function App() {
     <div className="App">
       <Nav>
       <Link to="/">Home</Link><br/>
+
       </Nav>
       <Switch>
         <Route exact path="/" component={Home} />
