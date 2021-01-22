@@ -4,6 +4,7 @@
     background: url(https://res.cloudinary.com/dzgeqcksj/image/upload/v1611177804/RecordCollection/cpr26503_rytrxc.jpg);
     background-size: cover;
     height: 100vh;
+
   }
 
   .homelinks {
@@ -18,7 +19,6 @@
     align-items: center;
     flex-wrap: wrap;
     font-family: 'Pacifico', cursive;
-    color: black;
   }
 
   .genresrecord {

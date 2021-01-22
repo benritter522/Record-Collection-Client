@@ -1,6 +1,7 @@
 import React, {useState, useEffect} from 'react'
 import Album from './Albums';
 import '../../Pages/Show.css';
+import EditSingleAlbum from './EditSingleAlbum'
 
 const SingleAlbum = (props) => {
     const [singleAlbum, setSingleAlbum] = useState ({});
@@ -22,6 +23,8 @@ const SingleAlbum = (props) => {
     }, []);
     console.log(singleAlbum)
 
+    
+
     return(
         <div className="Show">
 
@@ -34,6 +37,17 @@ const SingleAlbum = (props) => {
                         <h1>{singleAlbum.name}</h1>
                         
                         <h1>{singleAlbum.name}</h1>
+
+
+                        { singleAlbum.artists
+                            ? singleAlbum.artists.map((artist, index) => {
+                                return (
+                                    <p key={index}>{artist.name}</p>
+                                )
+                            })
+                            : <h1>Loading...</h1>
+                        }
+
                         { singleAlbum.genres
                             ? singleAlbum.genres.map((genre, index) => {
                                 return (
@@ -56,6 +70,7 @@ const SingleAlbum = (props) => {
                 : <h1>"Loading..."</h1>
             }
             
+            <EditSingleAlbum singleAlbum={singleAlbum} setSingleAlbum={singleAlbum}/>
 
         </div>
     )
