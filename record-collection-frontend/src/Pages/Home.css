@@ -1,0 +1,78 @@
+
+.homepage {
+    /* height: 100vh; */
+    background: url(https://res.cloudinary.com/dzgeqcksj/image/upload/v1611177804/RecordCollection/cpr26503_rytrxc.jpg);
+    background-size: cover;
+    width: 100%;
+    height: 100%;
+  }
+
+  .homelinks {
+    /* background: url(https://res.cloudinary.com/dzgeqcksj/image/upload/v1611261937/RecordCollection/5856b3da4f6ae202fedf2794_lppwvu.png);
+    background-size: 25vh;
+    /* background-position: center;
+    background-position-x: space-between;
+    background-position-x: right; */
+    /* background-repeat: no-repeat; */
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    flex-wrap: wrap;
+    font-family: 'Pacifico', cursive;
+  }
+
+  .genresrecord {
+    background: url(https://res.cloudinary.com/dzgeqcksj/image/upload/v1611261937/RecordCollection/5856b3da4f6ae202fedf2794_lppwvu.png);
+    background-size: 25vh;
+    background-position: center;
+    background-repeat: no-repeat;
+    margin: 10vh;
+    padding: 10vh;
+    /* display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    margin: 10vh;
+    padding: 30vh; */
+    
+  }
+
+  .artistsrecord {
+    background: url(https://res.cloudinary.com/dzgeqcksj/image/upload/v1611261937/RecordCollection/5856b3da4f6ae202fedf2794_lppwvu.png);
+    background-size: 25vh;
+    background-position: center;
+    background-repeat: no-repeat;
+    margin: 10vh;
+    padding: 10vh;
+    /* display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    margin: 10vh;
+    padding: 30vh; */
+    
+  }
+
+  .albumsrecord {
+    background: url(https://res.cloudinary.com/dzgeqcksj/image/upload/v1611261937/RecordCollection/5856b3da4f6ae202fedf2794_lppwvu.png);
+    background-size: 25vh;
+    background-position: center;
+    background-repeat: no-repeat;
+    margin: 10vh;
+    padding: 10vh;
+  }
+
+  .title {
+    font-family: 'Pacifico', cursive;
+    font-size: 10vh;
+    color: rgb(230, 206, 111);
+    background-color: gray;
+    background: transparent;
+  }
+
+  /* @media only screen and (min-width: 850px) {
+    .homepage {
+      width: 100%;
+      height: 100%;
+    }
+  } */
