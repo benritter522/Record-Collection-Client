@@ -72,7 +72,7 @@ const SingleAlbum = (props) => {
             }
             <div className="showalbum">
                 <h2>Edit Album Contents:</h2>
-                <EditSingleAlbum singleAlbum={singleAlbum} setSingleAlbum={singleAlbum}/>
+                <EditSingleAlbum singleAlbum={singleAlbum} setSingleAlbum={setSingleAlbum}/>
             </div>
 
         </div>

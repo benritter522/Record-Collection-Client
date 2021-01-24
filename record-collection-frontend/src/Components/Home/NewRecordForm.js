@@ -1,15 +1,15 @@
 import { useRef, useState, useEffect } from 'react'
 
 const NewRecordForm = (props) => {
-    const [genres, setGenres] = useState({});
-    const [artists, setArtists] = useState({});
-    const [albums, setAlbums] = useState({});
-    const [songs, setSongs] = useState({});
+    const [genres, setGenres] = useState([]);
+    const [artists, setArtists] = useState([]);
+    const [albums, setAlbums] = useState([]);
+    const [songs, setSongs] = useState([]);
 
-    const [genreID, setGenreID] = useState(0);
-    const [artistID, setArtistID] = useState(0);
-    const [albumID, setAlbumID] = useState(0);
-    const [songsID, setSongsID] = useState(0);
+    // const [genreID, setGenreID] = useState(0);
+    // const [artistID, setArtistID] = useState(0);
+    // const [albumID, setAlbumID] = useState(0);
+    // const [songsID, setSongsID] = useState(0);
 
     const genreInput = useRef(null);
     const artistInput = useRef(null);
@@ -59,7 +59,9 @@ const NewRecordForm = (props) => {
             })
             const data = await response.json();
             setGenres([...genres, data]);
-            setGenreID(data.id);
+            console.log("making genre");
+
+            return(data.id);
 
         } catch(err) {
             console.error(err);
@@ -79,7 +81,8 @@ const NewRecordForm = (props) => {
             })
             const data = await response.json();
             setArtists([...artists, data]);
-            setArtistID(data.id);
+            console.log("making artist");
+            return(data.id);
         } catch(err) {
             console.error(err);
         }
@@ -98,7 +101,9 @@ const NewRecordForm = (props) => {
             })
             const data = await response.json();
             setAlbums([...albums, data])
-            setAlbumID(data.id);
+            console.log("making album");
+
+            return(data.id);
         } catch(err) {
             console.error(err);
         }
@@ -117,7 +122,9 @@ const NewRecordForm = (props) => {
             })
             const data = await response.json();
             setSongs([...songs, data])
-            setSongsID(data.id);
+            console.log("making songs");
+
+            return(data.id);
         } catch(err) {
             console.error(err);
         }
@@ -126,25 +133,34 @@ const NewRecordForm = (props) => {
     const createRecord = async (event) => {
         event.preventDefault();
 
-        createArtist();
-        createGenre();
-        createAlbum();
-        createSongs();
+        const genreID = await createGenre();
+        console.log("genre ids: ", genreID);
 
-        event.currentTarget.reset();
+        const artistID = await createArtist();
+        console.log("artist ids: ", artistID);
+
+        const albumID = await createAlbum();
+        console.log("album ids: ", albumID);
+
+        const songsID = await createSongs();
+        console.log("songs ids: ", songsID);
+
+
+        // event.currentTarget.reset();
 
         // console.log("genre ID", genreID);
         // console.log("artist ID", artistID);
         // console.log("album ID", albumID);
         // console.log("song ID", songsID);
 
-        // const body = JSON.stringify({ song });
-
+        //
+        //  NEED TO FIND A WAY TO FORCE ALL STATE VARIABLES TO UPDATE IN THE LOCAL SCOPE IMMEDIATELY AFTER SETTING THE VALUES
+        //
         const body = JSON.stringify({ 
-            genre_id: genreID, 
-            artist_id: artistID, 
-            album_id: albumID, 
-            song_id: songsID 
+            genre_id: await genreID, 
+            artist_id: await artistID, 
+            album_id: await albumID, 
+            song_id: await songsID 
         });
 
         console.log("body", body)
@@ -158,18 +174,19 @@ const NewRecordForm = (props) => {
                 body: body
             })
             const data = await response.json();
-            console.log(data)
             props.updateRecords([...props.records, data])
+            console.log(data)
         } catch(err) {
             console.error(err);
         }
     }
 
+    
     useEffect(() => {
         arrModels.forEach(model => {
             fetchModels(model.name, model.func);
         });
-    },[])
+    },[genres, artists, albums, songs])
     
     // const createRecord = async (event) => {
         

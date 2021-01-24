@@ -17,16 +17,17 @@ export default (props) => {
         const body = JSON.stringify({
             album, artist, songs, genres
         });
+        console.log(body);
         event.currentTarget.reset();
         try{
             console.log(props)
             const response = await fetch (`http://record-collection-api.herokuapp.com/albums/${props.singleAlbum.id}`,
             {method: "PUT", 
             headers: {'Content-Type': 'application/json'},
-            body:body,
+            body: body
         });
-        const data =await response.json();
-        props.setRecord(data)
+        const data = await response.json();
+        props.setSingleAlbum(data)
         } catch(error){
             console.log(error)
         }
