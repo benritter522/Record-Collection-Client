@@ -1,10 +1,13 @@
+/* * {
+  border: 1px solid whitesmoke;
+} */
 
 .homepage {
     /* height: 100vh; */
     background: url(https://res.cloudinary.com/dzgeqcksj/image/upload/v1611177804/RecordCollection/cpr26503_rytrxc.jpg);
     background-size: cover;
     height: 100vh;
-
+    overflow: scroll;
   }
 
   .homelinks {
