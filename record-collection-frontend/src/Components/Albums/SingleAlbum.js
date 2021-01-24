@@ -5,12 +5,16 @@ import EditSingleAlbum from './EditSingleAlbum'
 
 const SingleAlbum = (props) => {
     const [singleAlbum, setSingleAlbum] = useState ({});
+    const [singleArtist, setArtist] = useState ({});
+    const [singleGenre, setGenre] = useState ({});
 
     const fetchSingleAlbum = async () => {
         try{
             const response = await fetch(`http://record-collection-api.herokuapp.com/albums/${props.match.params.id}`)
             const data = await response.json();
             setSingleAlbum(data);
+            setArtist(data.artists[0]);
+            setGenre(data.genres[0]);
             console.log(data);
         } catch(error) {
             console.log(error);
@@ -29,9 +33,9 @@ const SingleAlbum = (props) => {
         <div className="Show">
             {singleAlbum
                 ? (
-                    <div className="test">
+                    <div className="showalbum">
                         <h1 className="showtitle">{singleAlbum.name}</h1>
-                        { singleAlbum.artists
+                        {/* { singleAlbum.artists
                             ? singleAlbum.artists.map((artist, index) => {
                                 return (
                                     <p key={index}>Artist: {artist.name}</p>
@@ -47,8 +51,13 @@ const SingleAlbum = (props) => {
                                 )
                             })
                             : <h1>Loading...</h1>
-                        }
-
+                        } */}
+                        <h2>
+                            {singleArtist.name}
+                        </h2>
+                        <h2>
+                            {singleGenre.name}
+                        </h2>
                         { singleAlbum.songs
                             ? singleAlbum.songs.map((song, index) => {
                                 return (
@@ -61,8 +70,10 @@ const SingleAlbum = (props) => {
                 )
                 : <h1>"Loading..."</h1>
             }
-            
-            <EditSingleAlbum singleAlbum={singleAlbum} setSingleAlbum={singleAlbum}/>
+            <div className="showalbum">
+                <h2>Edit Album Contents:</h2>
+                <EditSingleAlbum singleAlbum={singleAlbum} setSingleAlbum={singleAlbum}/>
+            </div>
 
         </div>
     )

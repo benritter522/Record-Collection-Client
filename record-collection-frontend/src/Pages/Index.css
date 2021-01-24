@@ -1,8 +1,8 @@
 .Index {
     background: url(https://res.cloudinary.com/dzgeqcksj/image/upload/v1611177771/RecordCollection/second-hand-590789-e1523982087287_tw05u5.jpg);
-    /* background-size: auto; */
-    background-repeat: repeat-y;
-    height: 100%;
+    background-size: cover;
+    height: 100vh;
+    overflow: scroll;
   }
 
   .indextitle {
@@ -17,7 +17,7 @@
 }
 
 .oneindex {
-    border: 1px black solid;
+    border: 5px black round;
     color: white;
     border-radius: 3px;
     position: relative;
@@ -25,6 +25,7 @@
     width: 125px;
     padding: 15px 40px;
     background: rgb(43, 43, 43);
+    opacity: 0.8;
     text-align: center;
     font-family: 'Teko', sans-serif;
 }

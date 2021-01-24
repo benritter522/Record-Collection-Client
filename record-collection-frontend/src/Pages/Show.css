@@ -1,7 +1,8 @@
 .Show {
     background: url(https://res.cloudinary.com/dzgeqcksj/image/upload/v1611177716/RecordCollection/Record-hp-GQ-7Jun17_istock_b_m5ovd7.jpg);
+    background-size: cover;
     height: 100vh;
-    background-repeat: repeat;
+    overflow: scroll;
 }
 
 .showtitle {
@@ -9,22 +10,23 @@
     color: #AEEBEC;
 }
 
-.showlist {
-    display: flex;
+.test {
+    /* display: flex; */
     justify-items: space-between;
     align-content: center;
     flex-wrap: wrap;
 }
 
-.oneshow {
-    border: 1px black solid;
-    color: white;
+.showalbum {
+    border: 5px black solid;
+    color: whitesmoke;
     border-radius: 3px;
     position: relative;
     margin: 10% auto auto auto;
-    width: 125px;
-    padding: 20px 40px;
+    width: 300px;
+    padding: 25px 40px;
     background: rgb(43, 43, 43);
+    opacity: 0.8;
     text-align: center;
 
 }
